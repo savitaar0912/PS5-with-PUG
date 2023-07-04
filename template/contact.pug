@@ -1,0 +1,38 @@
+//- extends base.pug 
+doctype html 
+html 
+    head 
+        title PLAY STTATION 5
+        style 
+            include ../static/style.css 
+        script
+            script(src="/static/index.js") 
+    body 
+        nav#navigation 
+            ul
+                li.items #[a(href = '/') Home]
+                li.items #[a(href = '/games') Games]
+                li.items #[a(href = '/contact') Contact]
+
+block content 
+    section#contact
+        h1.center Contact Us. Play PS
+        form(action="/contact", method="post", class = "myForm").center
+            div.form
+                div.form-group 
+                    label(for="name") Name:
+                    input(type="text", name="name" , class="myInput", placeholder="Enter your name")
+                div.form-group
+                    label(for="phone") Phone:
+                    input(type="number", name="phone" , class="myInput", placeholder="Enter your phone")
+                div.form-group
+                    label(for="mail") E-Mail:
+                    input(type="mail", name="mail" , class="myInput", placeholder="Enter your email")
+                div.form-group
+                    label(for="games") Games: 
+                    select(name="games")
+                        option(value="SpiderMan") SpiderMan
+                        option(value="WWE") WWE
+                        option(value="Prince of Persia" , selected) Prince of Persia
+                        option(value="Avenger") Avengers
+                button(type="submit" , class="btn") Submit
